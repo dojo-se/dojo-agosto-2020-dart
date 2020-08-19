@@ -1,4 +1,4 @@
-import 'package:test/test.dart';
+ import 'package:test/test.dart';
 
 
 /*
@@ -17,14 +17,21 @@ import 'package:test/test.dart';
 
 */
 
+// List<int>.generate(3, (int index) => index * index);
 
+// List<List<int>>.generate(4, (int index) => List<int>.generate(3, (int index) => 0));
+// List<List<int>>.filled(4, List<int>.filled(3, 0));
 
 List<List<int>> espiral(int colunas, int linhas) {
 	if(linhas == 1 && colunas == 1){
     return [[1]];
   }
   else{
-    return [[1,2]];
+    var list = List<List<int>>.generate(linhas, (int index) => List<int>.generate(colunas, (int index) => 0));
+
+    print(list);
+    for(colunas )
+    return list;
   }
 }
 
@@ -39,9 +46,7 @@ void main() {
     expect(espiral(2, 1), equals([[1,2]]));
   });
 
-  test('Entrada com (2 colunas e 2 linhas)', () {
-    expect(espiral(2, 1), equals([[1,2],[4,3]]));
-  });
+  
 
   
 

@@ -5,7 +5,7 @@
 | Colocar cursores aqui para organização -> [   ]
 
 	[ [1, 2] ]
-	[
+	[ 
 		[1, 2]
 	]
 
@@ -22,6 +22,8 @@
 // List<List<int>>.generate(4, (int index) => List<int>.generate(3, (int index) => 0));
 // List<List<int>>.filled(4, List<int>.filled(3, 0));
 
+// list[linha][coluna] <--
+
 List<List<int>> espiral(int colunas, int linhas) {
 	if(linhas == 1 && colunas == 1){
     return [[1]];
@@ -29,8 +31,10 @@ List<List<int>> espiral(int colunas, int linhas) {
   else{
     var list = List<List<int>>.generate(linhas, (int index) => List<int>.generate(colunas, (int index) => 0));
 
-    print(list);
-    for(colunas )
+    for(var i=0;i < colunas; i++ ){
+      list[i][0];
+    }
+    print(list)
     return list;
   }
 }

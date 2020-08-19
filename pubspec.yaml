@@ -1,0 +1,5 @@
+name: MyApp
+description: ""
+dependencies:
+  test: null
+dev_dependencies: {}

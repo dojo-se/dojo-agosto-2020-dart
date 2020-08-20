@@ -45,25 +45,26 @@ List<List<int>> espiral(int colunas, int linhas) {
       var contador = 0;
 
       var inicioEsquerdo = 0;
+      var inicioSuperior = 0;
+      var inicioDireita = coluna-1;
       while(contador < colunas*linhas){
         
         contador++;
-
         //for da esquerda para direita
         for(var i = inicioEsquerdo; i < colunas, i++){
-          if(list[y][x] != 0) break;
+          if(list[i][inicioSuperior] != 0) break;
 
-          list[y][x] = contador;
+          list[i][inicioSuperior] = contador;
         }
         inicioEsquerdo++;
 
         //for da cima para baixo
-        for(var j = inicioSuperior; j < linhas, j--){
-          if(list[y][x] != 0) break;
+        for(var j = inicioSuperior; j < linhas, j++){
+          if(list[i][j] != 0) break;
 
-          list[y][x] = contador;
+          list[i][j] = contador;
         }
-        inicioSuperior--;
+        inicioSuperior++;
 
         //for da direita para esquerda
 

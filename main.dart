@@ -46,39 +46,54 @@ List<List<int>> espiral(int colunas, int linhas) {
 
       var inicioEsquerdo = 0;
       var inicioSuperior = 0;
-      var inicioDireita = coluna-1;
+      var inicioDireita = colunas-1;
+      var inicioInferior = linhas-1;
       while(contador < colunas*linhas){
-        
-        contador++;
-        //for da esquerda para direita
-        for(var i = inicioEsquerdo; i < colunas, i++){
-          if(list[i][inicioSuperior] != 0) break;
 
-          list[i][inicioSuperior] = contador;
+        //for da esquerda para direita
+        for(var i = inicioEsquerdo; i < colunas; i++){
+          if(list[inicioSuperior][i] != 0) 
+            break;
+
+          contador++;
+          list[inicioSuperior][i] = contador;
+
         }
         inicioEsquerdo++;
 
-        //for da cima para baixo
-        for(var j = inicioSuperior; j < linhas, j++){
-          if(list[i][j] != 0) break;
 
-          list[i][j] = contador;
+        //for da cima para baixo
+        for(var j = inicioSuperior; j < linhas; j++){
+          if(list[j][inicioDireita] != 0) 
+            break;
+          contador++;
+          list[j][inicioDireita] = contador;
         }
         inicioSuperior++;
 
         //for da direita para esquerda
+        for(var i = inicioDireita; i >= inicioEsquerdo;i--){
+          if(list[inicioInferior][i] != 0) 
+            break;
+
+          contador++;
+          list[inicioSuperior][i] = contador;
+        }
+        inicioDireita--;
 
         //for de baixo para cima
+        for(var j = inicioInferior; j >= inicioSuperior; j--){
+          if(list[j][inicioEsquerdo] != 0) 
+            break;
+
+          contador++;
+          list[j][inicioEsquerdo] = contador;
+        }
+        inicioInferior--;
+
       }
-
-			
-
-				// dx = ?
-				// dy = ?
-				//x += dx;
-				//y += dy;
-			}
-		}
+      print(list);
+    }
     return list;
 }
 

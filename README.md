@@ -32,12 +32,11 @@ Saída:
 
 Pontos positivos
 - 4 pseudo-novatos
-- 
 
 Pontos negativos
 - Muita ferramenta, pouca sincronia
 - Faltou um mestre de Dart
+- Desconexões por conta da internet pessoal
 
 Sugestões
 - Moderador compartilhar a tela (Platéia acompanha da tela compartilhada)
-- 

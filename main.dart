@@ -59,7 +59,7 @@ List<List<int>> espiral(int colunas, int linhas) {
           
 
         }
-        inicioEsquerdo++;
+        if(inicioEsquerdo < inicioDireita) inicioEsquerdo++;
 
 
         
@@ -73,7 +73,7 @@ List<List<int>> espiral(int colunas, int linhas) {
           }
           
         }
-        inicioSuperior++;
+        if(inicioSuperior < inicioInferior) inicioSuperior++;
 
         //for da direita para esquerda
         for(var i = inicioDireita; i >= inicioEsquerdo;i--){
@@ -86,7 +86,7 @@ List<List<int>> espiral(int colunas, int linhas) {
           }
           
         }
-        inicioDireita--;
+        if(inicioDireita > 0) inicioDireita--;
 
         
         //for de baixo para cima
@@ -100,7 +100,7 @@ List<List<int>> espiral(int colunas, int linhas) {
           }
           
         }
-        inicioInferior--;
+        if(inicioInferior > 0) inicioInferior--;
 
       }
       print(list);

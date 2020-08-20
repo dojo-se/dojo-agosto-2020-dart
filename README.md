@@ -26,3 +26,18 @@ Saída:
 16 27 30 23  8
 15 26 25 24  9
 14 13 12 11 10
+
+
+## Retrospectiva
+
+Pontos positivos
+- 4 pseudo-novatos
+- 
+
+Pontos negativos
+- Muita ferramenta, pouca sincronia
+- Faltou um mestre de Dart
+
+Sugestões
+- Moderador compartilhar a tela (Platéia acompanha da tela compartilhada)
+- 

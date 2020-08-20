@@ -39,15 +39,43 @@ List<List<int>> espiral(int colunas, int linhas) {
 			}
 		} else {
 			var x = 0;
-			var dx = 1;
+			var dx = 1; // dx==1 DIREITA | dx==-1 ESQUERDA
 			var y = 0;
-			var dy = 0;
+			var dy = 0; // dy==1 BAIXO | dy==-1 CIMA
+      var contador = 0;
 
-			for(var i = 0;dx==0&&dy==0; i++){
-				list[y][x] = i+1;
+      var inicioEsquerdo = 0;
+      while(contador < colunas*linhas){
+        
+        contador++;
+
+        //for da esquerda para direita
+        for(var i = inicioEsquerdo; i < colunas, i++){
+          if(list[y][x] != 0) break;
+
+          list[y][x] = contador;
+        }
+        inicioEsquerdo++;
+
+        //for da cima para baixo
+        for(var j = inicioSuperior; j < linhas, j--){
+          if(list[y][x] != 0) break;
+
+          list[y][x] = contador;
+        }
+        inicioSuperior--;
+
+        //for da direita para esquerda
+
+        //for de baixo para cima
+      }
+
+			
 
 				// dx = ?
 				// dy = ?
+				//x += dx;
+				//y += dy;
 			}
 		}
     return list;

@@ -38,10 +38,6 @@ List<List<int>> espiral(int colunas, int linhas) {
 				list[i][0] = i+1;
 			}
 		} else {
-			var x = 0;
-			var dx = 1; // dx==1 DIREITA | dx==-1 ESQUERDA
-			var y = 0;
-			var dy = 0; // dy==1 BAIXO | dy==-1 CIMA
       var contador = 0;
 
       var inicioEsquerdo = 0;
@@ -50,24 +46,32 @@ List<List<int>> espiral(int colunas, int linhas) {
       var inicioInferior = linhas-1;
       while(contador < colunas*linhas){
 
+        
         //for da esquerda para direita
         for(var i = inicioEsquerdo; i < colunas; i++){
           if(list[inicioSuperior][i] != 0) 
             break;
 
           contador++;
-          list[inicioSuperior][i] = contador;
+          if(contador <= colunas*linhas){
+            list[inicioSuperior][i] = contador;
+          }
+          
 
         }
         inicioEsquerdo++;
 
 
+        
         //for da cima para baixo
         for(var j = inicioSuperior; j < linhas; j++){
           if(list[j][inicioDireita] != 0) 
             break;
           contador++;
-          list[j][inicioDireita] = contador;
+          if(contador <= colunas*linhas){
+            list[j][inicioDireita] = contador;
+          }
+          
         }
         inicioSuperior++;
 
@@ -77,17 +81,24 @@ List<List<int>> espiral(int colunas, int linhas) {
             break;
 
           contador++;
-          list[inicioSuperior][i] = contador;
+          if(contador <= colunas*linhas){
+            list[inicioSuperior][i] = contador;
+          }
+          
         }
         inicioDireita--;
 
+        
         //for de baixo para cima
         for(var j = inicioInferior; j >= inicioSuperior; j--){
           if(list[j][inicioEsquerdo] != 0) 
             break;
 
           contador++;
-          list[j][inicioEsquerdo] = contador;
+          if(contador <= colunas*linhas){
+            list[j][inicioEsquerdo] = contador;
+          }
+          
         }
         inicioInferior--;
 
@@ -124,6 +135,16 @@ void main() {
     expect(espiral(2, 2), equals([[1,2],[4,3]]));
   });
 
+  test('Entrada com (3 coluna e 4 linhas)', () {
+    expect(espiral(3, 4), equals([ [1,2,3],[10,11,4],[9, 12,5], [8,7,6] ]));
+  });
+
+ /*
+01 02 03
+10 11 04
+09 12 05
+08 07 06
+ */
 
 //  test('String.split() splits the string on the delimiter', () {
 //    var string = 'foo,bar,baz';

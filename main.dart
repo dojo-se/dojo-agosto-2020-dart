@@ -28,26 +28,29 @@ List<List<int>> espiral(int colunas, int linhas) {
 	
     var list = List<List<int>>.generate(linhas, (int index) => List<int>.generate(colunas, (int index) => 0));
 
-    
+    if (linhas == 1) {
+			// Preenchendo a linha para a direita
+			for(var i = 0; i< colunas; i++ ){
+				list[0][i] = i+1;
+			}
+		} else if (colunas == 1) {
+			for(var i = 0; i < linhas; i++) {
+				list[i][0] = i+1;
+			}
+		} else {
+			var x = 0;
+			var dx = 1;
+			var y = 0;
+			var dy = 0;
 
-    // Para direita
-    for(var i = 0; i< colunas; i++ ){
-      list[0][i] = i+1;
-    }
+			for(var i = 0;dx==0&&dy==0; i++){
+				list[y][x] = i+1;
 
-    // Para baixo 
-   
-    
-    // Para esquerda
-
-
-
-    // Para cima 
-    
-    
-
+				// dx = ?
+				// dy = ?
+			}
+		}
     return list;
-  
 }
 
 
@@ -69,9 +72,14 @@ void main() {
     expect(espiral(1, 2), equals([[1],[2]]));
   });
 
-  
+  test('Entrada com (1 coluna e 4 linhas)', () {
+    expect(espiral(1, 4), equals([[1],[2],[3],[4]]));
+  });
 
-  
+  test('Entrada com (2 coluna e 2 linhas)', () {
+    expect(espiral(2, 2), equals([[1,2],[4,3]]));
+  });
+
 
 //  test('String.split() splits the string on the delimiter', () {
 //    var string = 'foo,bar,baz';
